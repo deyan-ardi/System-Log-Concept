@@ -16,10 +16,8 @@ class CreateSystemLogsTable extends Migration
         Schema::create('system_logs', function (Blueprint $table) {
             $table->string('id', 36)->primary();
             $table->text('ip');
-            $table->text('previous_url');
             $table->text('current_url');
             $table->text('access_date');
-            $table->text('page_access');
             $table->text('user_agent');
             $table->timestamps();
         });

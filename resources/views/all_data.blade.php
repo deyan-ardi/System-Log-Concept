@@ -21,10 +21,8 @@
                 <thead class="table-success">
                     <tr>
                         <th>IP Address</th>
-                        <th>Previous URL</th>
                         <th>Current URL</th>
                         <th>Access Date</th>
-                        <th>Page Access</th>
                         <th>User Agent</th>
                     </tr>
                 </thead>
@@ -32,10 +30,8 @@
                     @foreach ($get_all as $item)
                         <tr>
                             <td>{{ $item->ip }}</td>
-                            <td>{{ $item->previous_url }}</td>
                             <td>{{ $item->current_url }}</td>
                             <td>{{ \Carbon\Carbon::parse($item->access_date)->format('Y-m-d H:i') }} WITA</td>
-                            <td>{{ $item->page_access }}</td>
                             <td>{{ $item->user_agent }}</td>
                         </tr>
                     @endforeach

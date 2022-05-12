@@ -17,10 +17,8 @@ class LogController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'ip' => ['required', 'string'],
-            'previous_url' => ['required', 'string'],
             'current_url' => ['required', 'string'],
             'access_date' => ['required', 'string'],
-            'page_access' => ['required', 'string'],
             'user_agent' => ['required', 'string'],
         ]);
         if ($validator->fails()) {
@@ -35,10 +33,8 @@ class LogController extends Controller
             SystemLog::create([
                 'id' => Uuid::uuid4(),
                 'ip' => $request->ip,
-                'previous_url' => $request->previous_url,
                 'current_url' => $request->current_url,
                 'access_date' => $request->access_date,
-                'page_access' => $request->page_access,
                 'user_agent' => $request->user_agent,
             ]);
             DB::commit();
